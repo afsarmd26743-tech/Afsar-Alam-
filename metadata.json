@@ -1,0 +1,6 @@
+{
+  "name": "alam.dev",
+  "description": "A premium advanced trading dashboard featuring real-time simulated order books, interactive TradingView charts with full scrolling drawing tools, and the automated Alam AI Agent for market intelligence, strategy Q&A, and signal execution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
