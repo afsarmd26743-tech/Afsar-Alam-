@@ -1,13 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Growth Agent - Strategic Proposal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+
+        .brand {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #38bdf8;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+
+        .bio {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .gif-container {
+            margin-bottom: 1.5rem;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gif-container img {
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            position: relative;
+            height: 50px;
+        }
+
+        button {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.1s ease, background 0.2s ease;
+        }
+
+        #yesBtn {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        #yesBtn:hover {
+            background: #0ea5e9;
+            transform: scale(1.05);
+        }
+
+        #noBtn {
+            background: #ef4444;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="proposalCard">
+        <div class="brand">The Growth Agent</div>
+        <div class="bio">"Maximizing love metrics & scaling long-term happiness." 📈</div>
+        
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0ZndpZnE5OXN1bXU4OHpjd3huZ3g4dW94ZXN0bXN6cmxoY2Z3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/zz00w5nNFMnPq/giphy.gif" id="mainGif" alt="Proposal Image">
+        </div>
+
+        <h1 id="mainHeading">I have analyzed our data, and my metrics show a 100% growth potential if we partner up forever. <br><br>Will you accept this proposal?</h1>
+        
+        <div class="btn-container">
+            <button id="yesBtn" onclick="acceptProposal()">Accept Deal 📈</button>
+            <button id="noBtn" onmouseover="runAway()">Reject</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const heading = document.getElementById('mainHeading');
+        const gif = document.getElementById('mainGif');
+        const card = document.getElementById('proposalCard');
+
+        function runAway() {
+            const padding = 20;
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - padding * 2) + padding - (window.innerWidth/2 - card.offsetWidth/2);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - padding * 2) + padding - (window.innerHeight/2 - card.offsetHeight/2);
+            
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = Math.max(-100, Math.min(x, window.innerWidth - 150)) + 'px';
+            noBtn.style.top = Math.max(-100, Math.min(y, window.innerHeight - 150)) + 'px';
+        }
+
+        function acceptProposal() {
+            heading.innerHTML = "Deal Closed! 🚀 <br><br>Our ROI (Return on Love) is now infinite. Best decision ever, partner! ❤️";
+            gif.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHAyb3NidG9kOXN5M3R3czg0MXVreWV0Z3BtN3hoZXN0N3FwYmd0OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lTQF0ODLLjhza/giphy.gif";
+            noBtn.style.display = 'none';
+            yesBtn.style.transform = 'none';
+            yesBtn.innerHTML = "Perfect! 🥰";
+            yesBtn.onclick = null;
+        }
+    </script>
+
+</body>
 </html>
 
